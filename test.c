@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
-int a=3;
-if(0<a<=10)
-printf("Hello, world!\n");
-system("pause");
-return 0;
+    float a,b;
+    scanf("%f%f",&a,&b);
+    int c=(int)(b-a)/0.1;
+    printf("%d\n",c);
+    system("pause");
+    return 0;
 }
