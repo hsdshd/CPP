@@ -26,6 +26,8 @@ int main(){
 }
 ```
 ---
+---
+---
 $\mathscr{mathematics}$:
 $$
 \varGamma(x)=\frac{\int_{\alpha}^{\beta}g(t)(x-t)^2\text{d}t}{\phi(x)\sum_{i=0}^{N-1}\omega_i}\tag{1}
@@ -33,7 +35,7 @@ $$
 \
 excel:
 |name|score|
-|:---:|:---:|
+|:---:|:---|
 |Gary|90|
 |Tom|87|
 |Peter|96|
