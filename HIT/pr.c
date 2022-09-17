@@ -6,7 +6,7 @@ int guess(int n,int x);
 int main(){
     do{
         scanf("%d",&n);
-        guess(n,x);
+        guess(n,mkrandom());
     }while(!flag);
     system("pause");
     return 0;
