@@ -2,13 +2,17 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <math.h>
-bool pd(int n);
+int f(int n);
 int main()
 {
-    for (int i = 0; i <= 20; i++)
-        for (int j = 0; j <= 33; j++)
-            if (i * 5 + j * 3 + (100 - i - j) / 3.0 == 100)
-                printf("%d\n%d\n%d\n\n", i, j, (100 - i - j));
+    int n;
+    scanf("%d",&n);
+    printf("%d\n",f(n));
     system("pause");
     return 0;
+}
+int f(int n){
+    if(n==1||n==2)
+    return 1;
+    else return f(n-1)+f(n-2);
 }
