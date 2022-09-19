@@ -8,7 +8,7 @@ int main()
         for (int j = 0; j <= (10000 - 7 * i) / 5; j++)
             for (int k = 0; k <= (10000 - 7 * i - j * 5) / 4; k++)
             {
-                if (i * 7 + j * 5 + k * 4 == 10000)
+                if (i * 7 + j * 5 + k * 4 <= 10000)
                 {
                     cnt++;
                     if (i * 0.4 + j * 0.56 + k * 0.48 > max)
@@ -22,8 +22,8 @@ int main()
             }
     printf("there are %d combinations in  total\nA=%4dB=%4dC=%4d\nbenifit=%d\n", cnt, a, b, c, max);
 
-    int n = 0;
-    for (int i = 1; i <= 10; i++)
+    int n = 1;
+    for (int i = 1; i < 10; i++)
     {
         n *= 2;
         n++;
