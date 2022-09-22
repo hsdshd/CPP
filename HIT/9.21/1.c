@@ -1,15 +1,39 @@
 #include <stdlib.h>
 #include <stdio.h>
-int n,cnt;
-int p(int n){
-    if(n<=2)return 1;
-    return p(n-1)+p(n-2);
+int gcd(int a, int b)
+{
+    return b ? gcd(b, a % b) : a;
 }
-int main(){
-    scanf("%d",&n);
-    for(int i=1;i<=n;i++)
-    printf("%d\n",p(i));
+int qb(int a)
+{
+    if (a == 1)
+        return 1;
+    else
+        return qb(a - 1) * 2 + 1;
+}
+int qc(int a){
+    if(a==7)
+    return 2;
+    else 
+    return (qc(a+1)+1)*2;
+}
+int qd(int a){
+    if(a==1)
+    return 10;
+    else
+    return qd(a-1)+2;
+}
+int main()
+{
+    int a, b;
+    scanf("%d%d", &a, &b);
+    printf("gcd=%d\n", gcd(a, b));
 
+    printf("%d\n", qb(10));
+
+    printf("%d\n",qc(1));
+
+    printf("%d\n",qd(5));
     system("pause");
     return 0;
 }
