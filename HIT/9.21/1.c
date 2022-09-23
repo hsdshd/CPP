@@ -1,32 +1,25 @@
-#include <stdlib.h>
 #include <stdio.h>
-int gcd(int a, int b)
-{
-    return b ? gcd(b, a % b) : a;
-}
-int qb(int a)
-{
+#include <stdlib.h>
+int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int qb(int a) {
     if (a == 1)
         return 1;
     else
         return qb(a - 1) * 2 + 1;
 }
-int qc(int a)
-{
+int qc(int a) {
     if (a == 8)
         return 2;
     else
         return (qc(a + 1) + 1) * 2;
 }
-int qd(int a)
-{
+int qd(int a) {
     if (a == 1)
         return 10;
     else
         return qd(a - 1) + 2;
 }
-int main()
-{
+int main() {
     int a, b;
     scanf("%d%d", &a, &b);
     printf("gcd=%d\n", gcd(a, b));

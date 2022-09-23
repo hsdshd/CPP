@@ -2,10 +2,8 @@
 #include <stdlib.h>
 char c;
 int a[30];
-int main()
-{
-    while ((c = getchar())&&c != EOF)
-    {
+int main() {
+    while ((c = getchar()) && c != EOF) {
         for (int i = 0; i < 26; i++)
             if ((int)c == i + 97)
                 a[i]++;
