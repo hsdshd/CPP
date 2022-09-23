@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-int ax[101], n;
+int ax[101], n, x;
 void swap(int ax[], int n);
 void choose(int ax[], int n);
 void bubble(int ax[], int n);
-void binarySearch(int ax[], int n);
+int binarySearch(int ax[], int l, int x);
 int main() {
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
@@ -12,6 +12,8 @@ int main() {
     bubble(ax, n);
     for (int i = 0; i < n; i++)
         printf("%d\n", ax[i]);
+    scanf("%d", &x);
+    printf("%d\n", binarySearch(ax, n, x));
     system("pause");
     return 0;
 }
@@ -53,6 +55,19 @@ void bubble(int ax[], int n) {
         }
     } while (flag == 0);
 }
-void binarySearch(int ax[], int n) {
-    
+int binarySearch(int ax[], int l, int x) {
+    int left = 0, right = l - 1, mid;
+    while (left <= right) {
+        mid = left + (right - left) / 2;
+        if (ax[mid] > x)
+            left = mid + 1;
+        else if (ax[mid] < x)
+            right = mid - 1;
+        else
+            break;
+    }
+    if (left > right)
+        return -1;
+    else
+        return mid + 1;
 }

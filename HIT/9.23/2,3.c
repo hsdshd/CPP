@@ -6,14 +6,13 @@ int main() {
     while (scanf("%lf", &n) && (n < 1 || n > 100)) {
         printf("Invalid input!\n");
     }
-    int cnt = 0;
-    ans = n;
+    int cnt = 0;   
     while (n >= 0.1) {
         if (cnt == 0)
             ans = n;
         else
             ans += 2 * n;
-        n /= 3;
+        n /= 3;                                         
         cnt++;
     }
     printf("%d,%.3lf\n", cnt, ans);
