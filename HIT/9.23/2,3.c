@@ -7,8 +7,12 @@ int main() {
         printf("Invalid input!\n");
     }
     int cnt = 0;
+    ans = n;
     while (n >= 0.1) {
-        ans += n;
+        if (cnt == 0)
+            ans = n;
+        else
+            ans += 2 * n;
         n /= 3;
         cnt++;
     }
