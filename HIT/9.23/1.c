@@ -1,14 +1,64 @@
 #include <stdio.h>
 #include <stdlib.h>
-int f(int n){
-    if(n==1)return 1;
-    return n*f(n-1);
-}
-int ax[101];
+int ax[101], n;
+void swap(int ax[], int n);
+void choose(int ax[], int n);
+void insert(int ax[], int n);
+void read();
+void out();
 int main() {
-    //for (int i = 0; i < 100; i++)
-    //    scanf("%d", &ax[i]);
-    printf("%d",f(5));
+    read();
+    insert(ax, n);
+    out();
     system("pause");
     return 0;
+}
+void read() {
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &ax[i]);
+}
+void out() {
+    for (int i = 0; i < n; i++)
+        printf("%d\n", ax[i]);
+}
+void swap(int ax[], int n) {
+    int tmp;
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+            if (ax[j] > ax[i]) {
+                tmp = ax[i];
+                ax[i] = ax[j];
+                ax[j] = tmp;
+            }
+}
+void choose(int ax[], int n) {
+    int k, temp;
+    for (int i = 0; i < n - 1; i++) {
+        k = i;
+        for (int j = i + 1; j < n; j++)
+            if (ax[j] < ax[k])
+                k = j;
+        if (k != i) {
+            temp = ax[k];
+            ax[k] = ax[i];
+            ax[i] = temp;
+        }
+    }
+}
+void insert(int ax[], int n) {
+    int a[n], m = -1, k;
+    for (int i = 0; i < n; i++) {
+        m = -1;
+        for (int j = 0; j < n; j++) {
+            if (ax[j] > m) {
+                m = ax[j];
+                k = j;
+            }
+        }
+        a[i] = m;
+        ax[k] = 0;
+    }
+    for (int i = 0; i < n; i++)
+        ax[i] = a[i];
 }
