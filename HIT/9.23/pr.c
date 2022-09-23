@@ -3,13 +3,12 @@
 int ax[101], n;
 void swap(int ax[], int n);
 void choose(int ax[], int n);
-void bubble(int ax[], int n);
-void binarySearch(int ax[], int n);
+void insert(int ax[], int n);
 int main() {
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
         scanf("%d", &ax[i]);
-    bubble(ax, n);
+    insert(ax, n);
     for (int i = 0; i < n; i++)
         printf("%d\n", ax[i]);
     system("pause");
@@ -39,20 +38,19 @@ void choose(int ax[], int n) {
         }
     }
 }
-void bubble(int ax[], int n) {
-    int tmp, flag = 1;
-    do {
-        flag = 1;
-        for (int i = 0; i < n; i++) {
-            if (ax[i + 1] > ax[i]) {
-                flag = 0;
-                tmp = ax[i];
-                ax[i] = ax[i + 1];
-                ax[i + 1] = tmp;
+void insert(int ax[], int n) {
+    int a[n], m = -1, k;
+    for (int i = 0; i < n; i++) {
+        m = -1;
+        for (int j = 0; j < n; j++) {
+            if (ax[j] > m) {
+                m = ax[j];
+                k = j;
             }
         }
-    } while (flag == 0);
-}
-void binarySearch(int ax[], int n) {
-    
+        a[i] = m;
+        ax[k] = 0;
+    }
+    for (int i = 0; i < n; i++)
+        ax[i] = a[i];
 }
