@@ -12,9 +12,27 @@ int main() {
     char a[34];
     scanf("%s", a);
     if (pd(a))
-        printf("%s", a);
+        printf("%s\n", a);
     else
-        printf("No!");
+        printf("No!\n");
+
+    char s[25][11];
+    for (int i = 0; i < 24; i++)
+        scanf("%s", s[i]);
+    int flag = 0;
+    for (int i = 0; i < 24; i++) {
+        if (strcmp(s[i], "ttaaggcgcg")==0)
+            flag = 1;
+        if (flag == 1 && strcmp(s[i], "cgggtggcgt")==0 && strcmp(s[i + 1] ,"gcgcccaagt")==0) {
+            char str1[] = "cccaagccac";
+            memcpy(s[i], str1, sizeof(str1));
+            char str2[] = "gctgtcactt";
+            memcpy(s[i + 1], str2, sizeof(str2));
+        }
+    }
+    for (int i = 0; i < 24; i++)
+        printf("%s  ", s[i]);
+
     system("pause");
     return 0;
 }
