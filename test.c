@@ -1,10 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
 int main(){
-    float a,b;
-    scanf("%f%f",&a,&b);
-    int c=(int)(b-a)/0.1;
-    printf("%d\n",c);
-    system("pause");
+    int n,a;
+    double sum;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d",&a);
+        sum+=a;
+    }
+    printf("%.2lf\n",sum/n);
     return 0;
 }

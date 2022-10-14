@@ -16,14 +16,15 @@ int main() {
     else
         printf("No!\n");
 
-    char s[25][11];
+    char s[25][11] = {"asfd", "basfd"};
     for (int i = 0; i < 24; i++)
         scanf("%s", s[i]);
     int flag = 0;
     for (int i = 0; i < 24; i++) {
-        if (strcmp(s[i], "ttaaggcgcg")==0)
+        if (strcmp(s[i], "ttaaggcgcg") == 0)
             flag = 1;
-        if (flag == 1 && strcmp(s[i], "cgggtggcgt")==0 && strcmp(s[i + 1] ,"gcgcccaagt")==0) {
+        if (flag == 1 && strcmp(s[i], "cgggtggcgt") == 0 &&
+            strcmp(s[i + 1], "gcgcccaagt") == 0) {
             char str1[] = "cccaagccac";
             memcpy(s[i], str1, sizeof(str1));
             char str2[] = "gctgtcactt";
