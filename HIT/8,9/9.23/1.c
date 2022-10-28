@@ -3,7 +3,7 @@
 int ax[101], n, x;
 void swap(int ax[], int n);
 void choose(int ax[], int n);
-void bubble(int ax[], int n);
+void bubble(int * const p, int n);
 int binarySearch(int ax[], int l, int x);
 int main() {
     scanf("%d", &n);
@@ -41,20 +41,7 @@ void choose(int ax[], int n) {
         }
     }
 }
-void bubble(int ax[], int n) {
-    int tmp, flag = 1;
-    do {
-        flag = 1;
-        for (int i = 0; i < n; i++) {
-            if (ax[i + 1] > ax[i]) {
-                flag = 0;
-                tmp = ax[i];
-                ax[i] = ax[i + 1];
-                ax[i + 1] = tmp;
-            }
-        }
-    } while (flag == 0);
-}
+
 int binarySearch(int ax[], int l, int x) {
     int left = 0, right = l - 1, mid;
     while (left <= right) {

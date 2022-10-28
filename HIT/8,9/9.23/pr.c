@@ -4,11 +4,12 @@ int ax[101], n;
 void swap(int ax[], int n);
 void choose(int ax[], int n);
 void insert(int ax[], int n);
+
 int main() {
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
         scanf("%d", &ax[i]);
-    insert(ax, n);
+    bubble(ax, n);
     for (int i = 0; i < n; i++)
         printf("%d\n", ax[i]);
     system("pause");
